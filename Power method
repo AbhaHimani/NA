@@ -1,0 +1,12 @@
+A=[1 0 0 1; 1 2 0 1; 0 0 3 3; 0 1 2 3];
+X= [1;1;0;1];
+to1=0.001;
+y=A*X;
+kold=1;
+knew=max(abs(y))
+while(abs(kold-knew)>to1)
+X=(1/knew)*y
+y=A*X
+kold=knew
+knew=max(abs(y))
+end
