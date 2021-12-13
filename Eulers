@@ -1,0 +1,13 @@
+clear all
+a=0;
+b=1;
+h=0.2;
+f=@(t,y)-y+2*cos(t);
+y(1)=1;
+t(1)=a;
+n=(b-a)/h;
+for i=1:n
+y(i+1)=y(i)+ h*f(t(i),y(i));
+t(i+1)=t(i)+h;
+end
+disp(y)
